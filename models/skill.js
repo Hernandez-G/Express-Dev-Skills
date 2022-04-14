@@ -14,16 +14,16 @@ module.exports = {
 };
 
 function update(id, skill) {
-    id = pasrseInt(id);
+    id = parseInt(id);
     const updatedSkill = skills.find((skill) => skill.id === id);
     Object.assign(updatedSkill, skill);
-}
+  }
 
-function deleteOne(id) {
+  function deleteOne(id) {
     id = parseInt(id);
     const idx = skills.findIndex((skill) => skill.id === id);
-
-}
+    skills.splice(idx, 1);
+  }
 
 function create(skill) {
     skill.id = Date.now() % 1000000;
